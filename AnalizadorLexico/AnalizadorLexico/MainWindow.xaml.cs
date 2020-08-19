@@ -126,10 +126,7 @@ namespace AnalizadorLexico
         }
         public void mostrarResultados(String cadenaTexto, String cadenaDecimal, String cadenaEntero)
         {
-            if (cadenaTexto != "")
-            {
-                Listado.Items.Add("Palabra: "+cadenaTexto);
-            }
+
             if (cadenaEntero != "")
             {
                 for (int x = 0; x < cadenaEntero.Length; x++)
@@ -151,7 +148,11 @@ namespace AnalizadorLexico
                 }
                 
             }
-            
+            if (cadenaTexto != "")
+            {
+                Listado.Items.Add("Palabra: " + cadenaTexto);
+            }
+
         }
     }
 }
