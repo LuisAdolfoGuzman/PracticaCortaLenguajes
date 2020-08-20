@@ -13,9 +13,10 @@
         </Grid.ColumnDefinitions>
         <Label Content="Ingrese Oración:" HorizontalAlignment="Left" Margin="41,40,0,0" VerticalAlignment="Top" Height="33" Width="111" FontSize="14"/>
         <TextBox x:Name="Cadena" HorizontalAlignment="Left" Height="23" Margin="166,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" Grid.ColumnSpan="2"/>
-        <Button Content="Evaluar" HorizontalAlignment="Left" Margin="266,86,0,0" VerticalAlignment="Top" Width="115" Height="55" Grid.ColumnSpan="2" Click="Button_Click"/>
+        <Button Content="Evaluar" HorizontalAlignment="Left" Margin="221,86,0,0" VerticalAlignment="Top" Width="97" Height="55" Click="Button_Click"/>
         <ListBox x:Name="Listado" HorizontalAlignment="Left" Height="265" Margin="41,209,0,0" VerticalAlignment="Top" Width="198"/>
         <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="41,175,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="343,86,0,0" VerticalAlignment="Top" Width="97" Height="55" Grid.ColumnSpan="2" Click="Button_Click_1"/>
 
 
     </Grid>

@@ -35,6 +35,7 @@ namespace AnalizadorLexico
             String cadenaEntero = "";
             String cadenaDecimal = "";
             String PosiblePunto = "";
+
             
             for (int x = 0; x < largo; x++)
             {
@@ -78,25 +79,14 @@ namespace AnalizadorLexico
                             {
                                 nuevaCadena = nuevaCadena + caracter;
                             }
-                            //EN ESTE PUNTO QUIERE DECIR QUE LLEGAMOS AL FINAL DE NUESTRA CADENA POR LO QUE TAMBIEN AL FINAL DE NUESTRA SUB CADENA, ENTONCES LA AGREGA AL LISTADO
-                            if (x == largo - 1)
-                            {
-                                
-                                if (nuevaCadena != "")
-                                {
-                                    mostrarResultados(nuevaCadena, cadenaDecimal, cadenaEntero);
-                                    nuevaCadena = "";
-                                    cadenaDecimal = "";
-                                    cadenaEntero = "";
-                                }
-                            }
+                           
 
 
                         }
                         else
                         {
                             //INIDICA QUE ENCONTRO UN ESPACIO POR LO QUE NUESTRA SUB CADENA HA TERMINADO Y PROCEDEMOS A MOSTRAR SI EXISTE ALGO EN SU INTERIOR
-                            if (nuevaCadena != "")
+                            if (nuevaCadena != "" || cadenaEntero != "")
                             {
                                 mostrarResultados(nuevaCadena, cadenaDecimal, cadenaEntero);
                                 nuevaCadena = "";
@@ -112,16 +102,19 @@ namespace AnalizadorLexico
 
 
                 }
+                //EN ESTE PUNTO QUIERE DECIR QUE LLEGAMOS AL FINAL DE NUESTRA CADENA POR LO QUE TAMBIEN AL FINAL DE NUESTRA SUB CADENA, ENTONCES LA AGREGA AL LISTADO
+                if (x == largo - 1)
+                {
 
-                
+                    if (nuevaCadena != "" || cadenaEntero != "")
+                    {
+                        mostrarResultados(nuevaCadena, cadenaDecimal, cadenaEntero);
+                        nuevaCadena = "";
+                        cadenaDecimal = "";
+                        cadenaEntero = "";
+                    }
+                }
 
-          
-                
-
-
-                
-
-                
             }
         }
         public void mostrarResultados(String cadenaTexto, String cadenaDecimal, String cadenaEntero)
@@ -153,6 +146,12 @@ namespace AnalizadorLexico
                 Listado.Items.Add("Palabra: " + cadenaTexto);
             }
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Cadena.Clear();
+            Listado.Items.Clear();
         }
     }
 }
