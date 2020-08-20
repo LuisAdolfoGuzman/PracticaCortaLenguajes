@@ -1,0 +1,13 @@
+EXPRESIONES REGULARES:
+
++)Palabras:
+(a-z)*
+
++)Numeros Enteros
+(0-9)*
+
++)Numeros Decimales
+(0-9)*(.)(0-9)*
+
++)Tipo Moneda
+Q(.)$
